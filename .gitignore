@@ -1,0 +1,19 @@
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+Untitled*.ipynb
+
+# Données régénérables (producer.py --mode file --n 50000, seed fixe)
+data/data/transactions_history.jsonl
+
+# Spark / IDE
+spark-warehouse/
+metastore_db/
+derby.log
+.idea/
+.vscode/
+
+# Environnement local
+.env
+.claude/

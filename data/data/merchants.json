@@ -1,0 +1,300 @@
+{"merchant_id": "M-001", "name": "Epicerie Tanger 001", "city": "Tanger", "category": "epicerie", "latitude": 35.78366, "longitude": -5.85951}
+{"merchant_id": "M-002", "name": "Station Casablanca 002", "city": "Casablanca", "category": "carburant", "latitude": 33.59077, "longitude": -7.55058}
+{"merchant_id": "M-003", "name": "Boutique Casablanca 003", "city": "Casablanca", "category": "vetements", "latitude": 33.52628, "longitude": -7.63043}
+{"merchant_id": "M-004", "name": "Epicerie Casablanca 004", "city": "Casablanca", "category": "epicerie", "latitude": 33.57922, "longitude": -7.5682}
+{"merchant_id": "M-005", "name": "Boutique Fes 005", "city": "Fes", "category": "vetements", "latitude": 33.99014, "longitude": -4.99887}
+{"merchant_id": "M-006", "name": "Epicerie Agadir 006", "city": "Agadir", "category": "epicerie", "latitude": 30.45368, "longitude": -9.63213}
+{"merchant_id": "M-007", "name": "Pharmacie Rabat 007", "city": "Rabat", "category": "pharmacie", "latitude": 33.98645, "longitude": -6.79588}
+{"merchant_id": "M-008", "name": "Station Rabat 008", "city": "Rabat", "category": "carburant", "latitude": 34.00889, "longitude": -6.8557}
+{"merchant_id": "M-009", "name": "Pharmacie Rabat 009", "city": "Rabat", "category": "pharmacie", "latitude": 34.05161, "longitude": -6.81863}
+{"merchant_id": "M-010", "name": "Boutique Marrakech 010", "city": "Marrakech", "category": "vetements", "latitude": 31.58738, "longitude": -8.00178}
+{"merchant_id": "M-011", "name": "Boutique en ligne Tanger 011", "city": "Tanger", "category": "e-commerce", "latitude": 35.76724, "longitude": -5.81354}
+{"merchant_id": "M-012", "name": "Restaurant Casablanca 012", "city": "Casablanca", "category": "restauration", "latitude": 33.60041, "longitude": -7.54128}
+{"merchant_id": "M-013", "name": "Station Meknes 013", "city": "Meknes", "category": "carburant", "latitude": 33.88151, "longitude": -5.55196}
+{"merchant_id": "M-014", "name": "Telecom Meknes 014", "city": "Meknes", "category": "telecom", "latitude": 33.88052, "longitude": -5.57635}
+{"merchant_id": "M-015", "name": "Station Casablanca 015", "city": "Casablanca", "category": "carburant", "latitude": 33.58401, "longitude": -7.62269}
+{"merchant_id": "M-016", "name": "Telecom Fes 016", "city": "Fes", "category": "telecom", "latitude": 34.01433, "longitude": -5.03081}
+{"merchant_id": "M-017", "name": "Restaurant Tetouan 017", "city": "Tetouan", "category": "restauration", "latitude": 35.59696, "longitude": -5.33411}
+{"merchant_id": "M-018", "name": "Restaurant Agadir 018", "city": "Agadir", "category": "restauration", "latitude": 30.45998, "longitude": -9.5676}
+{"merchant_id": "M-019", "name": "Station Rabat 019", "city": "Rabat", "category": "carburant", "latitude": 33.992, "longitude": -6.79731}
+{"merchant_id": "M-020", "name": "Boutique en ligne Kenitra 020", "city": "Kenitra", "category": "e-commerce", "latitude": 34.23226, "longitude": -6.58028}
+{"merchant_id": "M-021", "name": "Transport Kenitra 021", "city": "Kenitra", "category": "transport", "latitude": 34.22529, "longitude": -6.61624}
+{"merchant_id": "M-022", "name": "Pharmacie Agadir 022", "city": "Agadir", "category": "pharmacie", "latitude": 30.4525, "longitude": -9.60526}
+{"merchant_id": "M-023", "name": "Boutique en ligne Tanger 023", "city": "Tanger", "category": "e-commerce", "latitude": 35.73143, "longitude": -5.78425}
+{"merchant_id": "M-024", "name": "Station Marrakech 024", "city": "Marrakech", "category": "carburant", "latitude": 31.65508, "longitude": -7.94499}
+{"merchant_id": "M-025", "name": "Telecom Casablanca 025", "city": "Casablanca", "category": "telecom", "latitude": 33.60231, "longitude": -7.59758}
+{"merchant_id": "M-026", "name": "Boutique Casablanca 026", "city": "Casablanca", "category": "vetements", "latitude": 33.58269, "longitude": -7.593}
+{"merchant_id": "M-027", "name": "Epicerie Casablanca 027", "city": "Casablanca", "category": "epicerie", "latitude": 33.59113, "longitude": -7.62834}
+{"merchant_id": "M-028", "name": "Pharmacie Kenitra 028", "city": "Kenitra", "category": "pharmacie", "latitude": 34.28786, "longitude": -6.59618}
+{"merchant_id": "M-029", "name": "Telecom Rabat 029", "city": "Rabat", "category": "telecom", "latitude": 34.01627, "longitude": -6.79622}
+{"merchant_id": "M-030", "name": "Pharmacie Kenitra 030", "city": "Kenitra", "category": "pharmacie", "latitude": 34.30819, "longitude": -6.554}
+{"merchant_id": "M-031", "name": "Station Marrakech 031", "city": "Marrakech", "category": "carburant", "latitude": 31.66655, "longitude": -8.00126}
+{"merchant_id": "M-032", "name": "Restaurant Tanger 032", "city": "Tanger", "category": "restauration", "latitude": 35.72478, "longitude": -5.80775}
+{"merchant_id": "M-033", "name": "Epicerie Marrakech 033", "city": "Marrakech", "category": "epicerie", "latitude": 31.63939, "longitude": -7.98224}
+{"merchant_id": "M-034", "name": "Boutique en ligne Casablanca 034", "city": "Casablanca", "category": "e-commerce", "latitude": 33.61097, "longitude": -7.55663}
+{"merchant_id": "M-035", "name": "Epicerie Rabat 035", "city": "Rabat", "category": "epicerie", "latitude": 33.99499, "longitude": -6.83486}
+{"merchant_id": "M-036", "name": "Transport Casablanca 036", "city": "Casablanca", "category": "transport", "latitude": 33.6047, "longitude": -7.542}
+{"merchant_id": "M-037", "name": "Telecom Marrakech 037", "city": "Marrakech", "category": "telecom", "latitude": 31.59234, "longitude": -7.98357}
+{"merchant_id": "M-038", "name": "Pharmacie Marrakech 038", "city": "Marrakech", "category": "pharmacie", "latitude": 31.63227, "longitude": -7.97044}
+{"merchant_id": "M-039", "name": "Restaurant Oujda 039", "city": "Oujda", "category": "restauration", "latitude": 34.70269, "longitude": -1.9187}
+{"merchant_id": "M-040", "name": "Boutique en ligne Fes 040", "city": "Fes", "category": "e-commerce", "latitude": 34.01191, "longitude": -5.00604}
+{"merchant_id": "M-041", "name": "Restaurant Casablanca 041", "city": "Casablanca", "category": "restauration", "latitude": 33.5295, "longitude": -7.6377}
+{"merchant_id": "M-042", "name": "Restaurant Tanger 042", "city": "Tanger", "category": "restauration", "latitude": 35.71022, "longitude": -5.81322}
+{"merchant_id": "M-043", "name": "Station Casablanca 043", "city": "Casablanca", "category": "carburant", "latitude": 33.61364, "longitude": -7.55384}
+{"merchant_id": "M-044", "name": "Restaurant Casablanca 044", "city": "Casablanca", "category": "restauration", "latitude": 33.55095, "longitude": -7.59126}
+{"merchant_id": "M-045", "name": "Transport Marrakech 045", "city": "Marrakech", "category": "transport", "latitude": 31.6038, "longitude": -7.9838}
+{"merchant_id": "M-046", "name": "Station Rabat 046", "city": "Rabat", "category": "carburant", "latitude": 33.98059, "longitude": -6.84849}
+{"merchant_id": "M-047", "name": "Transport Rabat 047", "city": "Rabat", "category": "transport", "latitude": 34.05728, "longitude": -6.88618}
+{"merchant_id": "M-048", "name": "Station Fes 048", "city": "Fes", "category": "carburant", "latitude": 33.97416, "longitude": -4.98498}
+{"merchant_id": "M-049", "name": "Station Agadir 049", "city": "Agadir", "category": "carburant", "latitude": 30.40267, "longitude": -9.62908}
+{"merchant_id": "M-050", "name": "Boutique Marrakech 050", "city": "Marrakech", "category": "vetements", "latitude": 31.59785, "longitude": -7.98484}
+{"merchant_id": "M-051", "name": "Station Kenitra 051", "city": "Kenitra", "category": "carburant", "latitude": 34.25531, "longitude": -6.54407}
+{"merchant_id": "M-052", "name": "Epicerie Tanger 052", "city": "Tanger", "category": "epicerie", "latitude": 35.77471, "longitude": -5.82994}
+{"merchant_id": "M-053", "name": "Station Casablanca 053", "city": "Casablanca", "category": "carburant", "latitude": 33.61574, "longitude": -7.55493}
+{"merchant_id": "M-054", "name": "Transport Casablanca 054", "city": "Casablanca", "category": "transport", "latitude": 33.57124, "longitude": -7.55333}
+{"merchant_id": "M-055", "name": "Telecom Kenitra 055", "city": "Kenitra", "category": "telecom", "latitude": 34.2489, "longitude": -6.53167}
+{"merchant_id": "M-056", "name": "Transport Casablanca 056", "city": "Casablanca", "category": "transport", "latitude": 33.55162, "longitude": -7.57014}
+{"merchant_id": "M-057", "name": "Transport Fes 057", "city": "Fes", "category": "transport", "latitude": 33.98358, "longitude": -5.02813}
+{"merchant_id": "M-058", "name": "Epicerie Oujda 058", "city": "Oujda", "category": "epicerie", "latitude": 34.7062, "longitude": -1.95288}
+{"merchant_id": "M-059", "name": "Telecom Tanger 059", "city": "Tanger", "category": "telecom", "latitude": 35.71519, "longitude": -5.83322}
+{"merchant_id": "M-060", "name": "Station Meknes 060", "city": "Meknes", "category": "carburant", "latitude": 33.903, "longitude": -5.52978}
+{"merchant_id": "M-061", "name": "Station Casablanca 061", "city": "Casablanca", "category": "carburant", "latitude": 33.61726, "longitude": -7.58283}
+{"merchant_id": "M-062", "name": "Epicerie Tanger 062", "city": "Tanger", "category": "epicerie", "latitude": 35.77144, "longitude": -5.84208}
+{"merchant_id": "M-063", "name": "Boutique en ligne Tanger 063", "city": "Tanger", "category": "e-commerce", "latitude": 35.80297, "longitude": -5.86357}
+{"merchant_id": "M-064", "name": "Restaurant Fes 064", "city": "Fes", "category": "restauration", "latitude": 33.99466, "longitude": -5.04471}
+{"merchant_id": "M-065", "name": "Transport Tanger 065", "city": "Tanger", "category": "transport", "latitude": 35.74112, "longitude": -5.80881}
+{"merchant_id": "M-066", "name": "Transport Casablanca 066", "city": "Casablanca", "category": "transport", "latitude": 33.58522, "longitude": -7.5835}
+{"merchant_id": "M-067", "name": "Restaurant Casablanca 067", "city": "Casablanca", "category": "restauration", "latitude": 33.57369, "longitude": -7.62655}
+{"merchant_id": "M-068", "name": "Station Rabat 068", "city": "Rabat", "category": "carburant", "latitude": 34.05883, "longitude": -6.85465}
+{"merchant_id": "M-069", "name": "Pharmacie Casablanca 069", "city": "Casablanca", "category": "pharmacie", "latitude": 33.58427, "longitude": -7.54108}
+{"merchant_id": "M-070", "name": "Epicerie Fes 070", "city": "Fes", "category": "epicerie", "latitude": 34.03489, "longitude": -5.00234}
+{"merchant_id": "M-071", "name": "Station Tetouan 071", "city": "Tetouan", "category": "carburant", "latitude": 35.62239, "longitude": -5.40497}
+{"merchant_id": "M-072", "name": "Station Casablanca 072", "city": "Casablanca", "category": "carburant", "latitude": 33.59734, "longitude": -7.62426}
+{"merchant_id": "M-073", "name": "Restaurant Rabat 073", "city": "Rabat", "category": "restauration", "latitude": 34.04266, "longitude": -6.87124}
+{"merchant_id": "M-074", "name": "Pharmacie Tanger 074", "city": "Tanger", "category": "pharmacie", "latitude": 35.76004, "longitude": -5.85889}
+{"merchant_id": "M-075", "name": "Epicerie Kenitra 075", "city": "Kenitra", "category": "epicerie", "latitude": 34.22023, "longitude": -6.58784}
+{"merchant_id": "M-076", "name": "Epicerie Casablanca 076", "city": "Casablanca", "category": "epicerie", "latitude": 33.55646, "longitude": -7.62672}
+{"merchant_id": "M-077", "name": "Telecom Oujda 077", "city": "Oujda", "category": "telecom", "latitude": 34.70552, "longitude": -1.90343}
+{"merchant_id": "M-078", "name": "Epicerie Rabat 078", "city": "Rabat", "category": "epicerie", "latitude": 33.98209, "longitude": -6.79709}
+{"merchant_id": "M-079", "name": "Telecom Fes 079", "city": "Fes", "category": "telecom", "latitude": 34.02266, "longitude": -4.97434}
+{"merchant_id": "M-080", "name": "Telecom Tanger 080", "city": "Tanger", "category": "telecom", "latitude": 35.75248, "longitude": -5.87982}
+{"merchant_id": "M-081", "name": "Epicerie Rabat 081", "city": "Rabat", "category": "epicerie", "latitude": 34.06079, "longitude": -6.87059}
+{"merchant_id": "M-082", "name": "Station Casablanca 082", "city": "Casablanca", "category": "carburant", "latitude": 33.55847, "longitude": -7.58381}
+{"merchant_id": "M-083", "name": "Telecom Kenitra 083", "city": "Kenitra", "category": "telecom", "latitude": 34.30358, "longitude": -6.60653}
+{"merchant_id": "M-084", "name": "Telecom Casablanca 084", "city": "Casablanca", "category": "telecom", "latitude": 33.61124, "longitude": -7.63732}
+{"merchant_id": "M-085", "name": "Boutique en ligne Fes 085", "city": "Fes", "category": "e-commerce", "latitude": 34.04634, "longitude": -5.01663}
+{"merchant_id": "M-086", "name": "Restaurant Fes 086", "city": "Fes", "category": "restauration", "latitude": 33.99478, "longitude": -4.97906}
+{"merchant_id": "M-087", "name": "Epicerie Casablanca 087", "city": "Casablanca", "category": "epicerie", "latitude": 33.60896, "longitude": -7.61756}
+{"merchant_id": "M-088", "name": "Transport Meknes 088", "city": "Meknes", "category": "transport", "latitude": 33.87847, "longitude": -5.51525}
+{"merchant_id": "M-089", "name": "Restaurant Kenitra 089", "city": "Kenitra", "category": "restauration", "latitude": 34.21337, "longitude": -6.61089}
+{"merchant_id": "M-090", "name": "Station Rabat 090", "city": "Rabat", "category": "carburant", "latitude": 34.06759, "longitude": -6.86369}
+{"merchant_id": "M-091", "name": "Boutique Tanger 091", "city": "Tanger", "category": "vetements", "latitude": 35.77745, "longitude": -5.79963}
+{"merchant_id": "M-092", "name": "Epicerie Rabat 092", "city": "Rabat", "category": "epicerie", "latitude": 33.98243, "longitude": -6.79456}
+{"merchant_id": "M-093", "name": "Pharmacie Casablanca 093", "city": "Casablanca", "category": "pharmacie", "latitude": 33.52693, "longitude": -7.58014}
+{"merchant_id": "M-094", "name": "Boutique en ligne Rabat 094", "city": "Rabat", "category": "e-commerce", "latitude": 34.01454, "longitude": -6.79318}
+{"merchant_id": "M-095", "name": "Restaurant Casablanca 095", "city": "Casablanca", "category": "restauration", "latitude": 33.54857, "longitude": -7.56892}
+{"merchant_id": "M-096", "name": "Restaurant Casablanca 096", "city": "Casablanca", "category": "restauration", "latitude": 33.55952, "longitude": -7.6328}
+{"merchant_id": "M-097", "name": "Boutique en ligne Fes 097", "city": "Fes", "category": "e-commerce", "latitude": 34.03042, "longitude": -4.99146}
+{"merchant_id": "M-098", "name": "Pharmacie Casablanca 098", "city": "Casablanca", "category": "pharmacie", "latitude": 33.57381, "longitude": -7.57311}
+{"merchant_id": "M-099", "name": "Pharmacie Rabat 099", "city": "Rabat", "category": "pharmacie", "latitude": 34.02634, "longitude": -6.87242}
+{"merchant_id": "M-100", "name": "Boutique Fes 100", "city": "Fes", "category": "vetements", "latitude": 34.03583, "longitude": -4.96752}
+{"merchant_id": "M-101", "name": "Pharmacie Tanger 101", "city": "Tanger", "category": "pharmacie", "latitude": 35.75011, "longitude": -5.80063}
+{"merchant_id": "M-102", "name": "Restaurant Rabat 102", "city": "Rabat", "category": "restauration", "latitude": 34.01389, "longitude": -6.8336}
+{"merchant_id": "M-103", "name": "Transport Fes 103", "city": "Fes", "category": "transport", "latitude": 34.01228, "longitude": -4.99024}
+{"merchant_id": "M-104", "name": "Telecom Marrakech 104", "city": "Marrakech", "category": "telecom", "latitude": 31.64539, "longitude": -8.00272}
+{"merchant_id": "M-105", "name": "Boutique en ligne Fes 105", "city": "Fes", "category": "e-commerce", "latitude": 33.97744, "longitude": -4.9626}
+{"merchant_id": "M-106", "name": "Pharmacie Casablanca 106", "city": "Casablanca", "category": "pharmacie", "latitude": 33.54556, "longitude": -7.61989}
+{"merchant_id": "M-107", "name": "Restaurant Casablanca 107", "city": "Casablanca", "category": "restauration", "latitude": 33.62149, "longitude": -7.57867}
+{"merchant_id": "M-108", "name": "Transport Agadir 108", "city": "Agadir", "category": "transport", "latitude": 30.41924, "longitude": -9.58512}
+{"merchant_id": "M-109", "name": "Boutique Casablanca 109", "city": "Casablanca", "category": "vetements", "latitude": 33.57254, "longitude": -7.6154}
+{"merchant_id": "M-110", "name": "Epicerie Fes 110", "city": "Fes", "category": "epicerie", "latitude": 34.05737, "longitude": -4.97176}
+{"merchant_id": "M-111", "name": "Boutique Kenitra 111", "city": "Kenitra", "category": "vetements", "latitude": 34.23288, "longitude": -6.54979}
+{"merchant_id": "M-112", "name": "Transport Fes 112", "city": "Fes", "category": "transport", "latitude": 33.97312, "longitude": -5.03288}
+{"merchant_id": "M-113", "name": "Transport Meknes 113", "city": "Meknes", "category": "transport", "latitude": 33.85683, "longitude": -5.55084}
+{"merchant_id": "M-114", "name": "Boutique en ligne Marrakech 114", "city": "Marrakech", "category": "e-commerce", "latitude": 31.6745, "longitude": -7.94196}
+{"merchant_id": "M-115", "name": "Boutique Tanger 115", "city": "Tanger", "category": "vetements", "latitude": 35.79256, "longitude": -5.82921}
+{"merchant_id": "M-116", "name": "Transport Kenitra 116", "city": "Kenitra", "category": "transport", "latitude": 34.25601, "longitude": -6.55502}
+{"merchant_id": "M-117", "name": "Pharmacie Meknes 117", "city": "Meknes", "category": "pharmacie", "latitude": 33.92008, "longitude": -5.54517}
+{"merchant_id": "M-118", "name": "Pharmacie Tanger 118", "city": "Tanger", "category": "pharmacie", "latitude": 35.75349, "longitude": -5.81265}
+{"merchant_id": "M-119", "name": "Boutique en ligne Casablanca 119", "city": "Casablanca", "category": "e-commerce", "latitude": 33.55507, "longitude": -7.58578}
+{"merchant_id": "M-120", "name": "Restaurant Casablanca 120", "city": "Casablanca", "category": "restauration", "latitude": 33.5614, "longitude": -7.62452}
+{"merchant_id": "M-121", "name": "Boutique Casablanca 121", "city": "Casablanca", "category": "vetements", "latitude": 33.56386, "longitude": -7.58554}
+{"merchant_id": "M-122", "name": "Restaurant Rabat 122", "city": "Rabat", "category": "restauration", "latitude": 34.05419, "longitude": -6.85265}
+{"merchant_id": "M-123", "name": "Epicerie Agadir 123", "city": "Agadir", "category": "epicerie", "latitude": 30.46347, "longitude": -9.57154}
+{"merchant_id": "M-124", "name": "Epicerie Rabat 124", "city": "Rabat", "category": "epicerie", "latitude": 34.06517, "longitude": -6.86174}
+{"merchant_id": "M-125", "name": "Boutique Rabat 125", "city": "Rabat", "category": "vetements", "latitude": 34.02472, "longitude": -6.81814}
+{"merchant_id": "M-126", "name": "Restaurant Agadir 126", "city": "Agadir", "category": "restauration", "latitude": 30.42662, "longitude": -9.62081}
+{"merchant_id": "M-127", "name": "Boutique Marrakech 127", "city": "Marrakech", "category": "vetements", "latitude": 31.61311, "longitude": -7.96319}
+{"merchant_id": "M-128", "name": "Telecom Rabat 128", "city": "Rabat", "category": "telecom", "latitude": 34.05495, "longitude": -6.79965}
+{"merchant_id": "M-129", "name": "Epicerie Oujda 129", "city": "Oujda", "category": "epicerie", "latitude": 34.72209, "longitude": -1.89941}
+{"merchant_id": "M-130", "name": "Station Fes 130", "city": "Fes", "category": "carburant", "latitude": 34.03237, "longitude": -5.04423}
+{"merchant_id": "M-131", "name": "Epicerie Marrakech 131", "city": "Marrakech", "category": "epicerie", "latitude": 31.60552, "longitude": -7.99836}
+{"merchant_id": "M-132", "name": "Boutique en ligne Marrakech 132", "city": "Marrakech", "category": "e-commerce", "latitude": 31.65562, "longitude": -7.99319}
+{"merchant_id": "M-133", "name": "Boutique Agadir 133", "city": "Agadir", "category": "vetements", "latitude": 30.40303, "longitude": -9.63991}
+{"merchant_id": "M-134", "name": "Epicerie Casablanca 134", "city": "Casablanca", "category": "epicerie", "latitude": 33.62309, "longitude": -7.6048}
+{"merchant_id": "M-135", "name": "Epicerie Fes 135", "city": "Fes", "category": "epicerie", "latitude": 34.04352, "longitude": -4.96284}
+{"merchant_id": "M-136", "name": "Epicerie Casablanca 136", "city": "Casablanca", "category": "epicerie", "latitude": 33.58523, "longitude": -7.61595}
+{"merchant_id": "M-137", "name": "Station Marrakech 137", "city": "Marrakech", "category": "carburant", "latitude": 31.6359, "longitude": -8.0093}
+{"merchant_id": "M-138", "name": "Boutique en ligne Fes 138", "city": "Fes", "category": "e-commerce", "latitude": 33.98488, "longitude": -4.99708}
+{"merchant_id": "M-139", "name": "Station Agadir 139", "city": "Agadir", "category": "carburant", "latitude": 30.45558, "longitude": -9.63172}
+{"merchant_id": "M-140", "name": "Epicerie Rabat 140", "city": "Rabat", "category": "epicerie", "latitude": 34.06379, "longitude": -6.83402}
+{"merchant_id": "M-141", "name": "Boutique Kenitra 141", "city": "Kenitra", "category": "vetements", "latitude": 34.25067, "longitude": -6.5587}
+{"merchant_id": "M-142", "name": "Restaurant Casablanca 142", "city": "Casablanca", "category": "restauration", "latitude": 33.53329, "longitude": -7.56255}
+{"merchant_id": "M-143", "name": "Station Meknes 143", "city": "Meknes", "category": "carburant", "latitude": 33.92312, "longitude": -5.54071}
+{"merchant_id": "M-144", "name": "Boutique Casablanca 144", "city": "Casablanca", "category": "vetements", "latitude": 33.58925, "longitude": -7.6329}
+{"merchant_id": "M-145", "name": "Epicerie Tanger 145", "city": "Tanger", "category": "epicerie", "latitude": 35.79446, "longitude": -5.80177}
+{"merchant_id": "M-146", "name": "Boutique en ligne Casablanca 146", "city": "Casablanca", "category": "e-commerce", "latitude": 33.58666, "longitude": -7.55693}
+{"merchant_id": "M-147", "name": "Boutique Fes 147", "city": "Fes", "category": "vetements", "latitude": 33.98571, "longitude": -5.00563}
+{"merchant_id": "M-148", "name": "Transport Fes 148", "city": "Fes", "category": "transport", "latitude": 34.01459, "longitude": -4.97523}
+{"merchant_id": "M-149", "name": "Boutique en ligne Tanger 149", "city": "Tanger", "category": "e-commerce", "latitude": 35.79467, "longitude": -5.80093}
+{"merchant_id": "M-150", "name": "Transport Casablanca 150", "city": "Casablanca", "category": "transport", "latitude": 33.54749, "longitude": -7.59333}
+{"merchant_id": "M-151", "name": "Boutique Tanger 151", "city": "Tanger", "category": "vetements", "latitude": 35.74314, "longitude": -5.83457}
+{"merchant_id": "M-152", "name": "Transport Rabat 152", "city": "Rabat", "category": "transport", "latitude": 33.99211, "longitude": -6.81182}
+{"merchant_id": "M-153", "name": "Pharmacie Rabat 153", "city": "Rabat", "category": "pharmacie", "latitude": 34.02648, "longitude": -6.83994}
+{"merchant_id": "M-154", "name": "Restaurant Casablanca 154", "city": "Casablanca", "category": "restauration", "latitude": 33.59511, "longitude": -7.59094}
+{"merchant_id": "M-155", "name": "Transport Agadir 155", "city": "Agadir", "category": "transport", "latitude": 30.44239, "longitude": -9.59902}
+{"merchant_id": "M-156", "name": "Station Agadir 156", "city": "Agadir", "category": "carburant", "latitude": 30.40722, "longitude": -9.60766}
+{"merchant_id": "M-157", "name": "Boutique en ligne Casablanca 157", "city": "Casablanca", "category": "e-commerce", "latitude": 33.57043, "longitude": -7.58671}
+{"merchant_id": "M-158", "name": "Boutique en ligne Rabat 158", "city": "Rabat", "category": "e-commerce", "latitude": 34.00608, "longitude": -6.84623}
+{"merchant_id": "M-159", "name": "Restaurant Rabat 159", "city": "Rabat", "category": "restauration", "latitude": 33.98297, "longitude": -6.87234}
+{"merchant_id": "M-160", "name": "Telecom Casablanca 160", "city": "Casablanca", "category": "telecom", "latitude": 33.54225, "longitude": -7.56594}
+{"merchant_id": "M-161", "name": "Pharmacie Casablanca 161", "city": "Casablanca", "category": "pharmacie", "latitude": 33.62115, "longitude": -7.55654}
+{"merchant_id": "M-162", "name": "Boutique en ligne Rabat 162", "city": "Rabat", "category": "e-commerce", "latitude": 33.98884, "longitude": -6.89019}
+{"merchant_id": "M-163", "name": "Pharmacie Marrakech 163", "city": "Marrakech", "category": "pharmacie", "latitude": 31.58405, "longitude": -8.02565}
+{"merchant_id": "M-164", "name": "Telecom Rabat 164", "city": "Rabat", "category": "telecom", "latitude": 34.03469, "longitude": -6.81632}
+{"merchant_id": "M-165", "name": "Epicerie Casablanca 165", "city": "Casablanca", "category": "epicerie", "latitude": 33.58051, "longitude": -7.59286}
+{"merchant_id": "M-166", "name": "Telecom Marrakech 166", "city": "Marrakech", "category": "telecom", "latitude": 31.67605, "longitude": -8.00585}
+{"merchant_id": "M-167", "name": "Station Kenitra 167", "city": "Kenitra", "category": "carburant", "latitude": 34.29321, "longitude": -6.59013}
+{"merchant_id": "M-168", "name": "Epicerie Casablanca 168", "city": "Casablanca", "category": "epicerie", "latitude": 33.53827, "longitude": -7.55869}
+{"merchant_id": "M-169", "name": "Station Tetouan 169", "city": "Tetouan", "category": "carburant", "latitude": 35.62789, "longitude": -5.40655}
+{"merchant_id": "M-170", "name": "Restaurant Agadir 170", "city": "Agadir", "category": "restauration", "latitude": 30.45537, "longitude": -9.61006}
+{"merchant_id": "M-171", "name": "Pharmacie Kenitra 171", "city": "Kenitra", "category": "pharmacie", "latitude": 34.29702, "longitude": -6.5312}
+{"merchant_id": "M-172", "name": "Epicerie Rabat 172", "city": "Rabat", "category": "epicerie", "latitude": 34.03186, "longitude": -6.81759}
+{"merchant_id": "M-173", "name": "Restaurant Tetouan 173", "city": "Tetouan", "category": "restauration", "latitude": 35.59105, "longitude": -5.39194}
+{"merchant_id": "M-174", "name": "Restaurant Casablanca 174", "city": "Casablanca", "category": "restauration", "latitude": 33.54048, "longitude": -7.63229}
+{"merchant_id": "M-175", "name": "Transport Casablanca 175", "city": "Casablanca", "category": "transport", "latitude": 33.59204, "longitude": -7.59281}
+{"merchant_id": "M-176", "name": "Pharmacie Casablanca 176", "city": "Casablanca", "category": "pharmacie", "latitude": 33.5938, "longitude": -7.5695}
+{"merchant_id": "M-177", "name": "Restaurant Marrakech 177", "city": "Marrakech", "category": "restauration", "latitude": 31.67189, "longitude": -7.95232}
+{"merchant_id": "M-178", "name": "Restaurant Tanger 178", "city": "Tanger", "category": "restauration", "latitude": 35.75201, "longitude": -5.82954}
+{"merchant_id": "M-179", "name": "Pharmacie Tanger 179", "city": "Tanger", "category": "pharmacie", "latitude": 35.79216, "longitude": -5.87686}
+{"merchant_id": "M-180", "name": "Pharmacie Casablanca 180", "city": "Casablanca", "category": "pharmacie", "latitude": 33.5826, "longitude": -7.55738}
+{"merchant_id": "M-181", "name": "Transport Tetouan 181", "city": "Tetouan", "category": "transport", "latitude": 35.54094, "longitude": -5.34953}
+{"merchant_id": "M-182", "name": "Pharmacie Fes 182", "city": "Fes", "category": "pharmacie", "latitude": 34.01815, "longitude": -5.00842}
+{"merchant_id": "M-183", "name": "Epicerie Casablanca 183", "city": "Casablanca", "category": "epicerie", "latitude": 33.61204, "longitude": -7.56635}
+{"merchant_id": "M-184", "name": "Epicerie Tanger 184", "city": "Tanger", "category": "epicerie", "latitude": 35.71863, "longitude": -5.78781}
+{"merchant_id": "M-185", "name": "Epicerie Meknes 185", "city": "Meknes", "category": "epicerie", "latitude": 33.94346, "longitude": -5.53007}
+{"merchant_id": "M-186", "name": "Epicerie Casablanca 186", "city": "Casablanca", "category": "epicerie", "latitude": 33.59941, "longitude": -7.62228}
+{"merchant_id": "M-187", "name": "Transport Marrakech 187", "city": "Marrakech", "category": "transport", "latitude": 31.67111, "longitude": -8.01295}
+{"merchant_id": "M-188", "name": "Transport Tanger 188", "city": "Tanger", "category": "transport", "latitude": 35.80641, "longitude": -5.837}
+{"merchant_id": "M-189", "name": "Boutique en ligne Rabat 189", "city": "Rabat", "category": "e-commerce", "latitude": 34.03791, "longitude": -6.80583}
+{"merchant_id": "M-190", "name": "Transport Rabat 190", "city": "Rabat", "category": "transport", "latitude": 33.99972, "longitude": -6.79708}
+{"merchant_id": "M-191", "name": "Epicerie Meknes 191", "city": "Meknes", "category": "epicerie", "latitude": 33.88898, "longitude": -5.56585}
+{"merchant_id": "M-192", "name": "Boutique Rabat 192", "city": "Rabat", "category": "vetements", "latitude": 34.05739, "longitude": -6.80911}
+{"merchant_id": "M-193", "name": "Transport Casablanca 193", "city": "Casablanca", "category": "transport", "latitude": 33.56442, "longitude": -7.62104}
+{"merchant_id": "M-194", "name": "Transport Rabat 194", "city": "Rabat", "category": "transport", "latitude": 34.03344, "longitude": -6.8156}
+{"merchant_id": "M-195", "name": "Telecom Casablanca 195", "city": "Casablanca", "category": "telecom", "latitude": 33.61587, "longitude": -7.59599}
+{"merchant_id": "M-196", "name": "Station Fes 196", "city": "Fes", "category": "carburant", "latitude": 33.97099, "longitude": -4.9948}
+{"merchant_id": "M-197", "name": "Telecom Agadir 197", "city": "Agadir", "category": "telecom", "latitude": 30.40888, "longitude": -9.64673}
+{"merchant_id": "M-198", "name": "Restaurant Rabat 198", "city": "Rabat", "category": "restauration", "latitude": 34.07013, "longitude": -6.80031}
+{"merchant_id": "M-199", "name": "Station Marrakech 199", "city": "Marrakech", "category": "carburant", "latitude": 31.64427, "longitude": -8.0157}
+{"merchant_id": "M-200", "name": "Pharmacie Tetouan 200", "city": "Tetouan", "category": "pharmacie", "latitude": 35.57939, "longitude": -5.39106}
+{"merchant_id": "M-201", "name": "Transport Meknes 201", "city": "Meknes", "category": "transport", "latitude": 33.86787, "longitude": -5.54217}
+{"merchant_id": "M-202", "name": "Telecom Rabat 202", "city": "Rabat", "category": "telecom", "latitude": 34.0573, "longitude": -6.86398}
+{"merchant_id": "M-203", "name": "Boutique Agadir 203", "city": "Agadir", "category": "vetements", "latitude": 30.41179, "longitude": -9.56933}
+{"merchant_id": "M-204", "name": "Epicerie Casablanca 204", "city": "Casablanca", "category": "epicerie", "latitude": 33.55138, "longitude": -7.60994}
+{"merchant_id": "M-205", "name": "Transport Tanger 205", "city": "Tanger", "category": "transport", "latitude": 35.79603, "longitude": -5.83935}
+{"merchant_id": "M-206", "name": "Boutique en ligne Marrakech 206", "city": "Marrakech", "category": "e-commerce", "latitude": 31.63469, "longitude": -7.97676}
+{"merchant_id": "M-207", "name": "Boutique en ligne Marrakech 207", "city": "Marrakech", "category": "e-commerce", "latitude": 31.66646, "longitude": -7.93302}
+{"merchant_id": "M-208", "name": "Boutique Casablanca 208", "city": "Casablanca", "category": "vetements", "latitude": 33.54646, "longitude": -7.56225}
+{"merchant_id": "M-209", "name": "Transport Casablanca 209", "city": "Casablanca", "category": "transport", "latitude": 33.59362, "longitude": -7.55866}
+{"merchant_id": "M-210", "name": "Telecom Rabat 210", "city": "Rabat", "category": "telecom", "latitude": 34.02043, "longitude": -6.8879}
+{"merchant_id": "M-211", "name": "Boutique en ligne Marrakech 211", "city": "Marrakech", "category": "e-commerce", "latitude": 31.66647, "longitude": -7.94368}
+{"merchant_id": "M-212", "name": "Transport Marrakech 212", "city": "Marrakech", "category": "transport", "latitude": 31.58103, "longitude": -8.01668}
+{"merchant_id": "M-213", "name": "Telecom Kenitra 213", "city": "Kenitra", "category": "telecom", "latitude": 34.21848, "longitude": -6.55205}
+{"merchant_id": "M-214", "name": "Boutique Casablanca 214", "city": "Casablanca", "category": "vetements", "latitude": 33.58808, "longitude": -7.55462}
+{"merchant_id": "M-215", "name": "Boutique Meknes 215", "city": "Meknes", "category": "vetements", "latitude": 33.93891, "longitude": -5.53462}
+{"merchant_id": "M-216", "name": "Transport Kenitra 216", "city": "Kenitra", "category": "transport", "latitude": 34.29824, "longitude": -6.62661}
+{"merchant_id": "M-217", "name": "Pharmacie Casablanca 217", "city": "Casablanca", "category": "pharmacie", "latitude": 33.62284, "longitude": -7.56512}
+{"merchant_id": "M-218", "name": "Station Marrakech 218", "city": "Marrakech", "category": "carburant", "latitude": 31.65554, "longitude": -7.96071}
+{"merchant_id": "M-219", "name": "Telecom Casablanca 219", "city": "Casablanca", "category": "telecom", "latitude": 33.5925, "longitude": -7.54946}
+{"merchant_id": "M-220", "name": "Epicerie Casablanca 220", "city": "Casablanca", "category": "epicerie", "latitude": 33.55244, "longitude": -7.60232}
+{"merchant_id": "M-221", "name": "Boutique Casablanca 221", "city": "Casablanca", "category": "vetements", "latitude": 33.57969, "longitude": -7.56055}
+{"merchant_id": "M-222", "name": "Station Casablanca 222", "city": "Casablanca", "category": "carburant", "latitude": 33.58405, "longitude": -7.60155}
+{"merchant_id": "M-223", "name": "Transport Fes 223", "city": "Fes", "category": "transport", "latitude": 34.05938, "longitude": -5.04349}
+{"merchant_id": "M-224", "name": "Pharmacie Marrakech 224", "city": "Marrakech", "category": "pharmacie", "latitude": 31.62546, "longitude": -7.96442}
+{"merchant_id": "M-225", "name": "Transport Kenitra 225", "city": "Kenitra", "category": "transport", "latitude": 34.30112, "longitude": -6.56244}
+{"merchant_id": "M-226", "name": "Transport Casablanca 226", "city": "Casablanca", "category": "transport", "latitude": 33.61762, "longitude": -7.54103}
+{"merchant_id": "M-227", "name": "Boutique Rabat 227", "city": "Rabat", "category": "vetements", "latitude": 34.03993, "longitude": -6.84592}
+{"merchant_id": "M-228", "name": "Boutique Rabat 228", "city": "Rabat", "category": "vetements", "latitude": 34.05623, "longitude": -6.88093}
+{"merchant_id": "M-229", "name": "Boutique en ligne Rabat 229", "city": "Rabat", "category": "e-commerce", "latitude": 34.02838, "longitude": -6.79233}
+{"merchant_id": "M-230", "name": "Boutique Rabat 230", "city": "Rabat", "category": "vetements", "latitude": 33.99835, "longitude": -6.83501}
+{"merchant_id": "M-231", "name": "Epicerie Fes 231", "city": "Fes", "category": "epicerie", "latitude": 34.05916, "longitude": -4.98328}
+{"merchant_id": "M-232", "name": "Pharmacie Meknes 232", "city": "Meknes", "category": "pharmacie", "latitude": 33.92107, "longitude": -5.57429}
+{"merchant_id": "M-233", "name": "Restaurant Agadir 233", "city": "Agadir", "category": "restauration", "latitude": 30.44146, "longitude": -9.58601}
+{"merchant_id": "M-234", "name": "Telecom Fes 234", "city": "Fes", "category": "telecom", "latitude": 34.03092, "longitude": -4.96746}
+{"merchant_id": "M-235", "name": "Pharmacie Tanger 235", "city": "Tanger", "category": "pharmacie", "latitude": 35.78836, "longitude": -5.88066}
+{"merchant_id": "M-236", "name": "Telecom Rabat 236", "city": "Rabat", "category": "telecom", "latitude": 33.97991, "longitude": -6.86209}
+{"merchant_id": "M-237", "name": "Telecom Agadir 237", "city": "Agadir", "category": "telecom", "latitude": 30.39788, "longitude": -9.56945}
+{"merchant_id": "M-238", "name": "Boutique en ligne Kenitra 238", "city": "Kenitra", "category": "e-commerce", "latitude": 34.26409, "longitude": -6.53885}
+{"merchant_id": "M-239", "name": "Pharmacie Meknes 239", "city": "Meknes", "category": "pharmacie", "latitude": 33.9349, "longitude": -5.50288}
+{"merchant_id": "M-240", "name": "Pharmacie Oujda 240", "city": "Oujda", "category": "pharmacie", "latitude": 34.70606, "longitude": -1.92473}
+{"merchant_id": "M-241", "name": "Station Casablanca 241", "city": "Casablanca", "category": "carburant", "latitude": 33.53718, "longitude": -7.54315}
+{"merchant_id": "M-242", "name": "Boutique Kenitra 242", "city": "Kenitra", "category": "vetements", "latitude": 34.30773, "longitude": -6.54974}
+{"merchant_id": "M-243", "name": "Boutique Rabat 243", "city": "Rabat", "category": "vetements", "latitude": 33.97229, "longitude": -6.83794}
+{"merchant_id": "M-244", "name": "Pharmacie Marrakech 244", "city": "Marrakech", "category": "pharmacie", "latitude": 31.63796, "longitude": -7.94886}
+{"merchant_id": "M-245", "name": "Station Tetouan 245", "city": "Tetouan", "category": "carburant", "latitude": 35.59598, "longitude": -5.37125}
+{"merchant_id": "M-246", "name": "Boutique en ligne Tanger 246", "city": "Tanger", "category": "e-commerce", "latitude": 35.80103, "longitude": -5.86186}
+{"merchant_id": "M-247", "name": "Transport Casablanca 247", "city": "Casablanca", "category": "transport", "latitude": 33.61404, "longitude": -7.60958}
+{"merchant_id": "M-248", "name": "Telecom Rabat 248", "city": "Rabat", "category": "telecom", "latitude": 33.97543, "longitude": -6.88788}
+{"merchant_id": "M-249", "name": "Station Oujda 249", "city": "Oujda", "category": "carburant", "latitude": 34.64112, "longitude": -1.86987}
+{"merchant_id": "M-250", "name": "Transport Casablanca 250", "city": "Casablanca", "category": "transport", "latitude": 33.5602, "longitude": -7.54486}
+{"merchant_id": "M-251", "name": "Boutique Fes 251", "city": "Fes", "category": "vetements", "latitude": 34.02683, "longitude": -4.98514}
+{"merchant_id": "M-252", "name": "Station Kenitra 252", "city": "Kenitra", "category": "carburant", "latitude": 34.29437, "longitude": -6.56863}
+{"merchant_id": "M-253", "name": "Pharmacie Tetouan 253", "city": "Tetouan", "category": "pharmacie", "latitude": 35.53177, "longitude": -5.38135}
+{"merchant_id": "M-254", "name": "Restaurant Marrakech 254", "city": "Marrakech", "category": "restauration", "latitude": 31.66505, "longitude": -8.02116}
+{"merchant_id": "M-255", "name": "Boutique en ligne Fes 255", "city": "Fes", "category": "e-commerce", "latitude": 33.97416, "longitude": -5.03021}
+{"merchant_id": "M-256", "name": "Transport Oujda 256", "city": "Oujda", "category": "transport", "latitude": 34.64057, "longitude": -1.93739}
+{"merchant_id": "M-257", "name": "Epicerie Tanger 257", "city": "Tanger", "category": "epicerie", "latitude": 35.71456, "longitude": -5.85065}
+{"merchant_id": "M-258", "name": "Restaurant Oujda 258", "city": "Oujda", "category": "restauration", "latitude": 34.63826, "longitude": -1.88208}
+{"merchant_id": "M-259", "name": "Restaurant Casablanca 259", "city": "Casablanca", "category": "restauration", "latitude": 33.60441, "longitude": -7.6165}
+{"merchant_id": "M-260", "name": "Epicerie Agadir 260", "city": "Agadir", "category": "epicerie", "latitude": 30.40553, "longitude": -9.5497}
+{"merchant_id": "M-261", "name": "Pharmacie Oujda 261", "city": "Oujda", "category": "pharmacie", "latitude": 34.71125, "longitude": -1.94761}
+{"merchant_id": "M-262", "name": "Telecom Kenitra 262", "city": "Kenitra", "category": "telecom", "latitude": 34.21249, "longitude": -6.5512}
+{"merchant_id": "M-263", "name": "Boutique en ligne Casablanca 263", "city": "Casablanca", "category": "e-commerce", "latitude": 33.52468, "longitude": -7.61326}
+{"merchant_id": "M-264", "name": "Boutique Casablanca 264", "city": "Casablanca", "category": "vetements", "latitude": 33.57571, "longitude": -7.56523}
+{"merchant_id": "M-265", "name": "Boutique en ligne Marrakech 265", "city": "Marrakech", "category": "e-commerce", "latitude": 31.63082, "longitude": -8.02019}
+{"merchant_id": "M-266", "name": "Epicerie Marrakech 266", "city": "Marrakech", "category": "epicerie", "latitude": 31.65222, "longitude": -7.94022}
+{"merchant_id": "M-267", "name": "Pharmacie Fes 267", "city": "Fes", "category": "pharmacie", "latitude": 34.0139, "longitude": -4.9614}
+{"merchant_id": "M-268", "name": "Transport Casablanca 268", "city": "Casablanca", "category": "transport", "latitude": 33.60783, "longitude": -7.59717}
+{"merchant_id": "M-269", "name": "Transport Casablanca 269", "city": "Casablanca", "category": "transport", "latitude": 33.53045, "longitude": -7.63172}
+{"merchant_id": "M-270", "name": "Station Tanger 270", "city": "Tanger", "category": "carburant", "latitude": 35.72212, "longitude": -5.82157}
+{"merchant_id": "M-271", "name": "Boutique en ligne Tanger 271", "city": "Tanger", "category": "e-commerce", "latitude": 35.74759, "longitude": -5.82426}
+{"merchant_id": "M-272", "name": "Boutique Rabat 272", "city": "Rabat", "category": "vetements", "latitude": 33.98082, "longitude": -6.82142}
+{"merchant_id": "M-273", "name": "Restaurant Meknes 273", "city": "Meknes", "category": "restauration", "latitude": 33.88651, "longitude": -5.50849}
+{"merchant_id": "M-274", "name": "Transport Rabat 274", "city": "Rabat", "category": "transport", "latitude": 34.01077, "longitude": -6.81864}
+{"merchant_id": "M-275", "name": "Boutique en ligne Rabat 275", "city": "Rabat", "category": "e-commerce", "latitude": 34.03741, "longitude": -6.85417}
+{"merchant_id": "M-276", "name": "Transport Casablanca 276", "city": "Casablanca", "category": "transport", "latitude": 33.52981, "longitude": -7.55662}
+{"merchant_id": "M-277", "name": "Station Casablanca 277", "city": "Casablanca", "category": "carburant", "latitude": 33.59756, "longitude": -7.60254}
+{"merchant_id": "M-278", "name": "Epicerie Casablanca 278", "city": "Casablanca", "category": "epicerie", "latitude": 33.58175, "longitude": -7.58364}
+{"merchant_id": "M-279", "name": "Station Rabat 279", "city": "Rabat", "category": "carburant", "latitude": 34.01198, "longitude": -6.80424}
+{"merchant_id": "M-280", "name": "Boutique Tetouan 280", "city": "Tetouan", "category": "vetements", "latitude": 35.61531, "longitude": -5.34629}
+{"merchant_id": "M-281", "name": "Pharmacie Oujda 281", "city": "Oujda", "category": "pharmacie", "latitude": 34.66656, "longitude": -1.90081}
+{"merchant_id": "M-282", "name": "Transport Casablanca 282", "city": "Casablanca", "category": "transport", "latitude": 33.54552, "longitude": -7.62898}
+{"merchant_id": "M-283", "name": "Boutique en ligne Meknes 283", "city": "Meknes", "category": "e-commerce", "latitude": 33.85499, "longitude": -5.56944}
+{"merchant_id": "M-284", "name": "Boutique Casablanca 284", "city": "Casablanca", "category": "vetements", "latitude": 33.60762, "longitude": -7.54235}
+{"merchant_id": "M-285", "name": "Epicerie Meknes 285", "city": "Meknes", "category": "epicerie", "latitude": 33.9044, "longitude": -5.53152}
+{"merchant_id": "M-286", "name": "Epicerie Fes 286", "city": "Fes", "category": "epicerie", "latitude": 33.98614, "longitude": -4.98753}
+{"merchant_id": "M-287", "name": "Boutique en ligne Rabat 287", "city": "Rabat", "category": "e-commerce", "latitude": 34.006, "longitude": -6.87346}
+{"merchant_id": "M-288", "name": "Boutique Casablanca 288", "city": "Casablanca", "category": "vetements", "latitude": 33.53006, "longitude": -7.5657}
+{"merchant_id": "M-289", "name": "Station Oujda 289", "city": "Oujda", "category": "carburant", "latitude": 34.70601, "longitude": -1.93709}
+{"merchant_id": "M-290", "name": "Boutique en ligne Rabat 290", "city": "Rabat", "category": "e-commerce", "latitude": 33.98664, "longitude": -6.86044}
+{"merchant_id": "M-291", "name": "Station Rabat 291", "city": "Rabat", "category": "carburant", "latitude": 34.05923, "longitude": -6.87604}
+{"merchant_id": "M-292", "name": "Epicerie Agadir 292", "city": "Agadir", "category": "epicerie", "latitude": 30.4452, "longitude": -9.62089}
+{"merchant_id": "M-293", "name": "Transport Fes 293", "city": "Fes", "category": "transport", "latitude": 34.02881, "longitude": -5.01638}
+{"merchant_id": "M-294", "name": "Station Casablanca 294", "city": "Casablanca", "category": "carburant", "latitude": 33.55762, "longitude": -7.62871}
+{"merchant_id": "M-295", "name": "Transport Fes 295", "city": "Fes", "category": "transport", "latitude": 34.02079, "longitude": -5.02696}
+{"merchant_id": "M-296", "name": "Epicerie Casablanca 296", "city": "Casablanca", "category": "epicerie", "latitude": 33.52387, "longitude": -7.60966}
+{"merchant_id": "M-297", "name": "Telecom Casablanca 297", "city": "Casablanca", "category": "telecom", "latitude": 33.59952, "longitude": -7.61086}
+{"merchant_id": "M-298", "name": "Transport Casablanca 298", "city": "Casablanca", "category": "transport", "latitude": 33.5978, "longitude": -7.62223}
+{"merchant_id": "M-299", "name": "Restaurant Rabat 299", "city": "Rabat", "category": "restauration", "latitude": 34.02093, "longitude": -6.80826}
+{"merchant_id": "M-300", "name": "Station Agadir 300", "city": "Agadir", "category": "carburant", "latitude": 30.41751, "longitude": -9.5739}

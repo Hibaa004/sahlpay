@@ -1,0 +1,6 @@
+﻿$ mc ls local/
+[2026-11-24 16:21:18 UTC]     0B lake/
+
+$ mc ls --recursive local/lake/
+[2026-11-24 16:39:54 UTC]  11MiB STANDARD bronze/history/transactions_history.jsonl
+[2026-11-24 16:39:55 UTC]  43KiB STANDARD ref/merchants/merchants.json

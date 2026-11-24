@@ -1,0 +1,22 @@
+﻿$ mc ls --recursive local/lake/silver/
+[2026-11-24 17:04:12 UTC]     0B STANDARD transactions_history/_SUCCESS
+[2026-11-24 17:04:10 UTC]  37KiB STANDARD transactions_history/city=Agadir/part-00000-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:11 UTC]  52KiB STANDARD transactions_history/city=Agadir/part-00001-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:10 UTC] 136KiB STANDARD transactions_history/city=Casablanca/part-00000-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:11 UTC] 205KiB STANDARD transactions_history/city=Casablanca/part-00001-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:10 UTC]  52KiB STANDARD transactions_history/city=Fes/part-00000-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:11 UTC]  75KiB STANDARD transactions_history/city=Fes/part-00001-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:11 UTC]  33KiB STANDARD transactions_history/city=Kenitra/part-00000-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:11 UTC]  47KiB STANDARD transactions_history/city=Kenitra/part-00001-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:11 UTC]  53KiB STANDARD transactions_history/city=Marrakech/part-00000-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:12 UTC]  78KiB STANDARD transactions_history/city=Marrakech/part-00001-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:11 UTC]  28KiB STANDARD transactions_history/city=Meknes/part-00000-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:12 UTC]  38KiB STANDARD transactions_history/city=Meknes/part-00001-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:11 UTC]  19KiB STANDARD transactions_history/city=Oujda/part-00000-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:12 UTC]  26KiB STANDARD transactions_history/city=Oujda/part-00001-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:11 UTC]  77KiB STANDARD transactions_history/city=Rabat/part-00000-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:12 UTC] 112KiB STANDARD transactions_history/city=Rabat/part-00001-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:11 UTC]  68KiB STANDARD transactions_history/city=Tanger/part-00000-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:12 UTC]  98KiB STANDARD transactions_history/city=Tanger/part-00001-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:11 UTC]  18KiB STANDARD transactions_history/city=Tetouan/part-00000-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet
+[2026-11-24 17:04:12 UTC]  24KiB STANDARD transactions_history/city=Tetouan/part-00001-889116bb-76e2-455e-b245-7692424af7b8.c000.snappy.parquet

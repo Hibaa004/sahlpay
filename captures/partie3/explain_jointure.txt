@@ -1,0 +1,97 @@
+>>> joined.explain(True)
+
+== Parsed Logical Plan ==
+Join Inner, (payee_id#3 = merchant_id#20)
+:- Filter (type#1 = P2M)
+:  +- Deduplicate [tx_id#0, status#7]
+:     +- Filter (status#7 = COMPLETED)
+:        +- Relation [tx_id#0,type#1,payer_wallet#2,payee_id#3,device_id#4,city#5,channel#6,status#7,amount_mad#8,event_time#9] json
++- Project [merchant_id#20, name#21, city#22 AS m_city#1052, category#23, latitude#24, longitude#25]
+   +- Relation [merchant_id#20,name#21,city#22,category#23,latitude#24,longitude#25] json
+
+== Analyzed Logical Plan ==
+tx_id: string, type: string, payer_wallet: string, payee_id: string, device_id: string, city: string, channel: string, status: string, amount_mad: double, event_time: timestamp, merchant_id: string, name: string, m_city: string, category: string, latitude: double, longitude: double
+Join Inner, (payee_id#3 = merchant_id#20)
+:- Filter (type#1 = P2M)
+:  +- Deduplicate [tx_id#0, status#7]
+:     +- Filter (status#7 = COMPLETED)
+:        +- Relation [tx_id#0,type#1,payer_wallet#2,payee_id#3,device_id#4,city#5,channel#6,status#7,amount_mad#8,event_time#9] json
++- Project [merchant_id#20, name#21, city#22 AS m_city#1052, category#23, latitude#24, longitude#25]
+   +- Relation [merchant_id#20,name#21,city#22,category#23,latitude#24,longitude#25] json
+
+== Optimized Logical Plan ==
+Join Inner, (payee_id#3 = merchant_id#20)
+:- Filter ((isnotnull(type#1) AND (type#1 = P2M)) AND isnotnull(payee_id#3))
+:  +- InMemoryRelation [tx_id#0, type#1, payer_wallet#2, payee_id#3, device_id#4, city#5, channel#6, status#7, amount_mad#8, event_time#9], StorageLevel(disk, memory, deserialized, 1 replicas)
+:        +- AdaptiveSparkPlan isFinalPlan=false
+:           +- SortAggregate(key=[tx_id#0, status#7], functions=[first(type#1, false), first(payer_wallet#2, false), first(payee_id#3, false), first(device_id#4, false), first(city#5, false), first(channel#6, false), first(amount_mad#8, false), first(event_time#9, false)], output=[tx_id#0, type#66, payer_wallet#68, payee_id#70, device_id#72, city#74, channel#76, status#7, amount_mad#78, event_time#80])
+:              +- Sort [tx_id#0 ASC NULLS FIRST, status#7 ASC NULLS FIRST], false, 0
+:                 +- Exchange hashpartitioning(tx_id#0, status#7, 8), ENSURE_REQUIREMENTS, [plan_id=1267]
+:                    +- SortAggregate(key=[tx_id#0, status#7], functions=[partial_first(type#1, false), partial_first(payer_wallet#2, false), partial_first(payee_id#3, false), partial_first(device_id#4, false), partial_first(city#5, false), partial_first(channel#6, false), partial_first(amount_mad#8, false), partial_first(event_time#9, false)], output=[tx_id#0, status#7, first#97, valueSet#98, first#99, valueSet#100, first#101, valueSet#102, first#103, valueSet#104, first#105, valueSet#106, first#107, valueSet#108, first#109, valueSet#110, first#111, valueSet#112])
+:                       +- Sort [tx_id#0 ASC NULLS FIRST, status#7 ASC NULLS FIRST], false, 0
+:                          +- Filter (isnotnull(status#7) AND (status#7 = COMPLETED))
+:                             +- FileScan json [tx_id#0,type#1,payer_wallet#2,payee_id#3,device_id#4,city#5,channel#6,status#7,amount_mad#8,event_time#9] Batched: false, DataFilters: [isnotnull(status#7), (status#7 = COMPLETED)], Format: JSON, Location: InMemoryFileIndex(1 paths)[s3a://lake/bronze/history/transactions_history.jsonl], PartitionFilters: [], PushedFilters: [IsNotNull(status), EqualTo(status,COMPLETED)], ReadSchema: struct<tx_id:string,type:string,payer_wallet:string,payee_id:string,device_id:string,city:string,...
++- Project [merchant_id#20, name#21, city#22 AS m_city#1052, category#23, latitude#24, longitude#25]
+   +- Filter isnotnull(merchant_id#20)
+      +- Relation [merchant_id#20,name#21,city#22,category#23,latitude#24,longitude#25] json
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- BroadcastHashJoin [payee_id#3], [merchant_id#20], Inner, BuildRight, false
+   :- Filter ((isnotnull(type#1) AND (type#1 = P2M)) AND isnotnull(payee_id#3))
+   :  +- InMemoryTableScan [tx_id#0, type#1, payer_wallet#2, payee_id#3, device_id#4, city#5, channel#6, status#7, amount_mad#8, event_time#9], [isnotnull(type#1), (type#1 = P2M), isnotnull(payee_id#3)]
+   :        +- InMemoryRelation [tx_id#0, type#1, payer_wallet#2, payee_id#3, device_id#4, city#5, channel#6, status#7, amount_mad#8, event_time#9], StorageLevel(disk, memory, deserialized, 1 replicas)
+   :              +- AdaptiveSparkPlan isFinalPlan=false
+   :                 +- SortAggregate(key=[tx_id#0, status#7], functions=[first(type#1, false), first(payer_wallet#2, false), first(payee_id#3, false), first(device_id#4, false), first(city#5, false), first(channel#6, false), first(amount_mad#8, false), first(event_time#9, false)], output=[tx_id#0, type#66, payer_wallet#68, payee_id#70, device_id#72, city#74, channel#76, status#7, amount_mad#78, event_time#80])
+   :                    +- Sort [tx_id#0 ASC NULLS FIRST, status#7 ASC NULLS FIRST], false, 0
+   :                       +- Exchange hashpartitioning(tx_id#0, status#7, 8), ENSURE_REQUIREMENTS, [plan_id=1296]
+   :                          +- SortAggregate(key=[tx_id#0, status#7], functions=[partial_first(type#1, false), partial_first(payer_wallet#2, false), partial_first(payee_id#3, false), partial_first(device_id#4, false), partial_first(city#5, false), partial_first(channel#6, false), partial_first(amount_mad#8, false), partial_first(event_time#9, false)], output=[tx_id#0, status#7, first#97, valueSet#98, first#99, valueSet#100, first#101, valueSet#102, first#103, valueSet#104, first#105, valueSet#106, first#107, valueSet#108, first#109, valueSet#110, first#111, valueSet#112])
+   :                             +- Sort [tx_id#0 ASC NULLS FIRST, status#7 ASC NULLS FIRST], false, 0
+   :                                +- Filter (isnotnull(status#7) AND (status#7 = COMPLETED))
+   :                                   +- FileScan json [tx_id#0,type#1,payer_wallet#2,payee_id#3,device_id#4,city#5,channel#6,status#7,amount_mad#8,event_time#9] Batched: false, DataFilters: [isnotnull(status#7), (status#7 = COMPLETED)], Format: JSON, Location: InMemoryFileIndex(1 paths)[s3a://lake/bronze/history/transactions_history.jsonl], PartitionFilters: [], PushedFilters: [IsNotNull(status), EqualTo(status,COMPLETED)], ReadSchema: struct<tx_id:string,type:string,payer_wallet:string,payee_id:string,device_id:string,city:string,...
+   +- BroadcastExchange HashedRelationBroadcastMode(List(input[0, string, true]),false), [plan_id=1288]
+      +- Project [merchant_id#20, name#21, city#22 AS m_city#1052, category#23, latitude#24, longitude#25]
+         +- Filter isnotnull(merchant_id#20)
+            +- FileScan json [merchant_id#20,name#21,city#22,category#23,latitude#24,longitude#25] Batched: false, DataFilters: [isnotnull(merchant_id#20)], Format: JSON, Location: InMemoryFileIndex(1 paths)[s3a://lake/ref/merchants], PartitionFilters: [], PushedFilters: [IsNotNull(merchant_id)], ReadSchema: struct<merchant_id:string,name:string,city:string,category:string,latitude:double,longitude:double>
+
+
+>>> spark.conf.set("spark.sql.autoBroadcastJoinThreshold", -1)
+joined_smj = p2m.join(merchants.withColumnRenamed("city", "m_city"),
+                      p2m.payee_id == merchants.merchant_id, "inner")
+joined_smj.explain()
+t0 = time.time()
+(joined_smj.groupBy("city", "category").agg(F.sum("amount_mad")).write.format("noop").mode("overwrite").save())
+t_smj = time.time() - t0
+spark.conf.set("spark.sql.autoBroadcastJoinThreshold", 10 * 1024 * 1024)
+t0 = time.time()
+(joined.groupBy("city", "category").agg(F.sum("amount_mad")).write.format("noop").mode("overwrite").save())
+t_bhj = time.time() - t0
+print(f"SortMergeJoin : {t_smj:.2f} s | BroadcastHashJoin : {t_bhj:.2f} s")
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- SortMergeJoin [payee_id#3], [merchant_id#20], Inner
+   :- Sort [payee_id#3 ASC NULLS FIRST], false, 0
+   :  +- Exchange hashpartitioning(payee_id#3, 8), ENSURE_REQUIREMENTS, [plan_id=1318]
+   :     +- Filter ((isnotnull(type#1) AND (type#1 = P2M)) AND isnotnull(payee_id#3))
+   :        +- InMemoryTableScan [tx_id#0, type#1, payer_wallet#2, payee_id#3, device_id#4, city#5, channel#6, status#7, amount_mad#8, event_time#9], [isnotnull(type#1), (type#1 = P2M), isnotnull(payee_id#3)]
+   :              +- InMemoryRelation [tx_id#0, type#1, payer_wallet#2, payee_id#3, device_id#4, city#5, channel#6, status#7, amount_mad#8, event_time#9], StorageLevel(disk, memory, deserialized, 1 replicas)
+   :                    +- AdaptiveSparkPlan isFinalPlan=false
+   :                       +- SortAggregate(key=[tx_id#0, status#7], functions=[first(type#1, false), first(payer_wallet#2, false), first(payee_id#3, false), first(device_id#4, false), first(city#5, false), first(channel#6, false), first(amount_mad#8, false), first(event_time#9, false)])
+   :                          +- Sort [tx_id#0 ASC NULLS FIRST, status#7 ASC NULLS FIRST], false, 0
+   :                             +- Exchange hashpartitioning(tx_id#0, status#7, 8), ENSURE_REQUIREMENTS, [plan_id=1329]
+   :                                +- SortAggregate(key=[tx_id#0, status#7], functions=[partial_first(type#1, false), partial_first(payer_wallet#2, false), partial_first(payee_id#3, false), partial_first(device_id#4, false), partial_first(city#5, false), partial_first(channel#6, false), partial_first(amount_mad#8, false), partial_first(event_time#9, false)])
+   :                                   +- Sort [tx_id#0 ASC NULLS FIRST, status#7 ASC NULLS FIRST], false, 0
+   :                                      +- Filter (isnotnull(status#7) AND (status#7 = COMPLETED))
+   :                                         +- FileScan json [tx_id#0,type#1,payer_wallet#2,payee_id#3,device_id#4,city#5,channel#6,status#7,amount_mad#8,event_time#9] Batched: false, DataFilters: [isnotnull(status#7), (status#7 = COMPLETED)], Format: JSON, Location: InMemoryFileIndex(1 paths)[s3a://lake/bronze/history/transactions_history.jsonl], PartitionFilters: [], PushedFilters: [IsNotNull(status), EqualTo(status,COMPLETED)], ReadSchema: struct<tx_id:string,type:string,payer_wallet:string,payee_id:string,device_id:string,city:string,...
+   +- Sort [merchant_id#20 ASC NULLS FIRST], false, 0
+      +- Exchange hashpartitioning(merchant_id#20, 8), ENSURE_REQUIREMENTS, [plan_id=1319]
+         +- Project [merchant_id#20, name#21, city#22 AS m_city#4807, category#23, latitude#24, longitude#25]
+            +- Filter isnotnull(merchant_id#20)
+               +- FileScan json [merchant_id#20,name#21,city#22,category#23,latitude#24,longitude#25] Batched: false, DataFilters: [isnotnull(merchant_id#20)], Format: JSON, Location: InMemoryFileIndex(1 paths)[s3a://lake/ref/merchants], PartitionFilters: [], PushedFilters: [IsNotNull(merchant_id)], ReadSchema: struct<merchant_id:string,name:string,city:string,category:string,latitude:double,longitude:double>
+
+
+
+SortMergeJoin : 1.33 s | BroadcastHashJoin : 1.31 s
+
+                                                                                

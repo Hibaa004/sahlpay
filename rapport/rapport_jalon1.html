@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>SahlPay : rapport du jalon 1 (parties 1 à 3)</title>
+<style>
+  @page { size: A4; margin: 13mm 14mm 13mm 14mm; }
+  :root { --accent: #1f4e8c; --muted: #555; --rule: #c9d3e0; --code-bg: #f4f6f9; }
+  * { box-sizing: border-box; }
+  body { font-family: "Cambria", "Georgia", serif; font-size: 9.7pt; line-height: 1.3; color: #1a1a1a; margin: 0; }
+  h1, h2, h3 { font-family: "Calibri", "Segoe UI", sans-serif; color: var(--accent); }
+  h2 { font-size: 13.5pt; margin: 8px 0 5px; padding-bottom: 3px; border-bottom: 1.5px solid var(--accent); }
+  h3 { font-size: 10.6pt; margin: 8px 0 3px; }
+  p { margin: 4px 0 6px; text-align: justify; }
+  ul { margin: 3px 0 6px; padding-left: 18px; }
+  li { margin: 1.5px 0; }
+  code, pre { font-family: "Consolas", "Cascadia Mono", monospace; font-size: 8.4pt; }
+  code { background: var(--code-bg); padding: 0 2px; border-radius: 2px; }
+  pre { background: var(--code-bg); border-left: 3px solid var(--rule); padding: 5px 8px; margin: 5px 0 7px; white-space: pre-wrap; line-height: 1.28; }
+  table { border-collapse: collapse; width: 100%; margin: 5px 0 8px; font-size: 9.2pt; }
+  th, td { border: 1px solid var(--rule); padding: 2.5px 6px; text-align: left; vertical-align: top; }
+  th { background: #e8eef6; font-family: "Calibri", "Segoe UI", sans-serif; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  figure { margin: 6px 0 8px; text-align: center; break-inside: avoid; }
+  figure img { max-width: 100%; border: 1px solid var(--rule); }
+  figcaption { font-size: 8.6pt; color: var(--muted); margin-top: 2px; }
+  .row { display: flex; gap: 10px; align-items: flex-start; }
+  .row > * { flex: 1; min-width: 0; }
+  .note { border-left: 3px solid #d9a400; background: #fff8e1; padding: 4px 8px; margin: 6px 0; font-size: 9.5pt; }
+  .page { break-after: page; }
+  .small { font-size: 9pt; }
+
+  /* Page de garde */
+  .cover { height: 268mm; display: flex; flex-direction: column; justify-content: space-between; text-align: center; padding: 6mm 0; }
+  .cover .school { font-family: "Calibri", "Segoe UI", sans-serif; font-size: 11.5pt; color: var(--muted); letter-spacing: .5px; }
+  .cover h1 { font-size: 22pt; margin: 0 0 8px; }
+  .cover .subtitle { font-size: 13pt; color: #333; margin: 0 auto; max-width: 150mm; }
+  .cover .milestone { display: inline-block; margin-top: 16px; padding: 5px 14px; border: 1.5px solid var(--accent); color: var(--accent);
+                      font-family: "Calibri", "Segoe UI", sans-serif; font-size: 11.5pt; border-radius: 3px; }
+  .cover .people { display: flex; justify-content: space-around; font-size: 11pt; text-align: left; }
+  .cover .people b { font-family: "Calibri", "Segoe UI", sans-serif; color: var(--accent); display: block; margin-bottom: 4px; }
+  .cover .chain { font-family: "Consolas", monospace; font-size: 9pt; color: var(--muted); }
+  .toc { text-align: left; margin: 0 auto; width: 120mm; font-size: 10.5pt; }
+  .toc div { display: flex; justify-content: space-between; border-bottom: 1px dotted #aaa; padding: 2px 0; }
+</style>
+</head>
+<body>
+
+<!-- ============================== PAGE DE GARDE ============================== -->
+<section class="cover page">
+  <div>
+    <div class="school">EMSI · 5ᵉ année · Écosystème Big Data 2 · Année universitaire 2026–2027</div>
+  </div>
+  <div>
+    <h1>SahlPay.ma : plateforme Big Data pour un portefeuille mobile</h1>
+    <p class="subtitle" style="text-align:center">Suivi des paiements en temps réel et détection de fraude avec Apache Spark, Kafka, GraphX et GraphFrames</p>
+    <div class="milestone">Rapport du jalon 1 : parties 1, 2 et 3 (traitements batch)</div>
+    <p class="chain" style="text-align:center;margin-top:18px">producer.py → Kafka (3 partitions) → Spark 3.5 (Master + 2 Workers) → MinIO s3a://lake (Bronze → Silver → Gold)</p>
+  </div>
+  <div class="toc">
+    <div><span>1. Mise en place du cluster et positionnement</span><span>p. 2</span></div>
+    <div><span>2. Traitement batch avec SparkCore (RDD)</span><span>p. 3</span></div>
+    <div><span>3. Spark SQL et DataFrames</span><span>p. 4</span></div>
+  </div>
+  <div class="people">
+    <div><b>Réalisé par</b>Hiba KAAOUACH<br>Oumaima BOUMAZOUED</div>
+    <div><b>Encadré par</b>Dr. Mohammed SALIHOUN</div>
+    <div><b>Date de rendu</b>29 novembre 2026</div>
+  </div>
+</section>
+
+<!-- ============================== PARTIE 1 ============================== -->
+<section>
+<h2>1. Mise en place du cluster et positionnement</h2>
+
+<h3>1.1 Déploiement</h3>
+<p>L'environnement est décrit dans un unique <code>docker-compose.yml</code>. Il contient :</p>
+<ul>
+  <li><b>Kafka 3.7</b> en mode KRaft, sans ZooKeeper ;</li>
+  <li><b>MinIO</b>, avec un service <code>minio-init</code> qui crée le bucket <code>lake</code> ;</li>
+  <li>un <b>Spark Master</b> et <b>deux Workers</b> en mode standalone (image <code>apache/spark:3.5.1-python3</code>, 2 cœurs et 2 Go par Worker) ;</li>
+  <li>un conteneur <b>Jupyter</b> (PySpark 3.5.1).</li>
+</ul>
+<p>Le topic <code>transactions</code> a été créé avec 3 partitions. La configuration Spark est centralisée dans <code>common.py</code> : master, connecteur S3A vers MinIO, extensions Delta et packages Kafka/Delta.</p>
+
+<div class="row">
+<figure style="flex:1.25">
+<svg viewBox="0 0 470 235" xmlns="http://www.w3.org/2000/svg" font-family="Calibri, Segoe UI, sans-serif" font-size="10.5">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f4e8c"/></marker></defs>
+  <!-- Driver -->
+  <rect x="8" y="12" width="140" height="78" rx="5" fill="#e8eef6" stroke="#1f4e8c"/>
+  <text x="78" y="29" text-anchor="middle" font-weight="bold" fill="#1f4e8c">Conteneur jupyter</text>
+  <text x="78" y="46" text-anchor="middle">DRIVER (noyau Python)</text>
+  <text x="78" y="61" text-anchor="middle">SparkSession → SparkContext</text>
+  <text x="78" y="76" text-anchor="middle">DAG, stages, tâches · UI :4040</text>
+  <!-- Master -->
+  <rect x="200" y="12" width="128" height="78" rx="5" fill="#fff" stroke="#1f4e8c"/>
+  <text x="264" y="29" text-anchor="middle" font-weight="bold" fill="#1f4e8c">spark-master:7077</text>
+  <text x="264" y="46" text-anchor="middle">CLUSTER MANAGER</text>
+  <text x="264" y="61" text-anchor="middle">(standalone)</text>
+  <text x="264" y="76" text-anchor="middle">alloue les ressources · UI :8080</text>
+  <!-- Workers -->
+  <rect x="200" y="122" width="128" height="46" rx="5" fill="#fff" stroke="#1f4e8c"/>
+  <text x="264" y="139" text-anchor="middle" font-weight="bold" fill="#1f4e8c">spark-worker-1</text>
+  <text x="264" y="156" text-anchor="middle">Executor : 2 cœurs, 1 Go</text>
+  <rect x="200" y="180" width="128" height="46" rx="5" fill="#fff" stroke="#1f4e8c"/>
+  <text x="264" y="197" text-anchor="middle" font-weight="bold" fill="#1f4e8c">spark-worker-2</text>
+  <text x="264" y="214" text-anchor="middle">Executor : 2 cœurs, 1 Go</text>
+  <!-- MinIO / Kafka -->
+  <rect x="372" y="122" width="90" height="46" rx="5" fill="#f4f6f9" stroke="#888"/>
+  <text x="417" y="141" text-anchor="middle" font-weight="bold">MinIO</text>
+  <text x="417" y="157" text-anchor="middle">s3a://lake</text>
+  <rect x="372" y="180" width="90" height="46" rx="5" fill="#f4f6f9" stroke="#888"/>
+  <text x="417" y="199" text-anchor="middle" font-weight="bold">Kafka</text>
+  <text x="417" y="215" text-anchor="middle">transactions ×3</text>
+  <!-- arrows -->
+  <line x1="148" y1="44" x2="198" y2="44" stroke="#1f4e8c" marker-end="url(#a)"/>
+  <text x="173" y="38" text-anchor="middle" font-size="9">1</text>
+  <line x1="264" y1="90" x2="264" y2="120" stroke="#1f4e8c" marker-end="url(#a)"/>
+  <text x="272" y="108" font-size="9">2</text>
+  <path d="M78,90 C78,150 140,150 198,145" fill="none" stroke="#1f4e8c" stroke-dasharray="4 3" marker-end="url(#a)"/>
+  <path d="M78,90 C78,200 140,205 198,203" fill="none" stroke="#1f4e8c" stroke-dasharray="4 3" marker-end="url(#a)"/>
+  <text x="96" y="170" font-size="9">3 : tâches / résultats</text>
+  <line x1="328" y1="145" x2="370" y2="145" stroke="#888" marker-end="url(#a)"/>
+  <line x1="328" y1="203" x2="370" y2="203" stroke="#888" marker-end="url(#a)"/>
+</svg>
+<figcaption>Figure 1. Déploiement : (1) le driver s'enregistre auprès du Master ; (2) le Master lance un executor par Worker ; (3) le driver envoie les tâches directement aux executors.</figcaption>
+</figure>
+<div style="flex:1">
+<pre>Version Spark : 3.5.1
+Master        : spark://spark-master:7077
+appName       : SahlPay
+Cœurs (defaultParallelism) : 4</pre>
+<pre>Topic: transactions  PartitionCount: 3
+  Partition: 0  Leader: 1  Replicas: 1  Isr: 1
+  Partition: 1  Leader: 1  Replicas: 1  Isr: 1
+  Partition: 2  Leader: 1  Replicas: 1  Isr: 1</pre>
+<pre>$ mc ls local/
+[2026-11-24 16:21:18 UTC]     0B lake/</pre>
+<p class="small">Une première exécution avait affiché <code>defaultParallelism = 2</code>. Cette valeur additionne les cœurs des executors <i>déjà enregistrés</i> au moment de l'appel, et le second executor n'était pas encore connecté. Le notebook attend désormais que les 2 executors soient enregistrés avant d'afficher la valeur.</p>
+</div>
+</div>
+
+<div class="row">
+<figure><img src="../captures/partie1/P1_Spark_workers.png"><figcaption>Figure 2. Spark Master (port 8080) : 2 Workers <i>ALIVE</i>, 4 cœurs et 4 Go.</figcaption></figure>
+<figure><img src="../captures/partie1/P1_minio.png"><figcaption>Figure 3. Console MinIO (port 9001) : bucket <code>lake</code> créé.</figcaption></figure>
+</div>
+
+<h3>1.2 Rôles des composants dans notre déploiement</h3>
+<ul>
+  <li><b>Driver</b> : c'est le processus Python du notebook, dans le conteneur <code>jupyter</code>. Il exécute notre programme, transforme les opérations en DAG puis en stages et tâches, les planifie et récupère les résultats des actions (<code>collect</code>, <code>show</code>). Il héberge la Spark UI (port 4040). <code>spark.driver.host=jupyter</code> permet aux executors de le joindre.</li>
+  <li><b>Cluster Manager</b> : c'est le Master standalone (<code>spark://spark-master:7077</code>). Il connaît les ressources des Workers et attribue des executors aux applications. Il ne fait aucun calcul.</li>
+  <li><b>Executors</b> : ce sont des JVM lancées par chaque Worker (2 cœurs, <code>spark.executor.memory=1g</code>). Ils exécutent les tâches en parallèle, lisent les données dans MinIO via S3A, conservent les partitions en cache et écrivent les fichiers de shuffle.</li>
+  <li><b>SparkContext</b> : c'est le point d'entrée créé par la <code>SparkSession</code>. Il ouvre la connexion au Master, obtient les executors et sert à créer les RDD (<code>sc.textFile</code>). La <code>SparkSession</code> l'enveloppe et ajoute l'API SQL et DataFrame.</li>
+</ul>
+<p class="small">Une application réserve tous les cœurs libres. Une seconde session ouverte en parallèle restait donc en état <i>WAITING</i>, avec le message <code>Initial job has not accepted any resources</code>. C'est le comportement normal de l'ordonnanceur FIFO du mode standalone.</p>
+
+<h3>1.3 Deux limites de MapReduce/Hadoop corrigées par Spark</h3>
+<ul>
+  <li><b>Écritures disque entre chaque étape.</b> Un job MapReduce n'a qu'une phase map et une phase reduce, et son résultat est écrit sur HDFS. Notre calcul de la partie 2 enchaîne trois agrégations : dédoublonnage par <code>tx_id</code>, somme par ville, puis top 5 des commerçants. En MapReduce, il faudrait trois jobs qui relisent et réécrivent les données sur disque. Spark enchaîne ces opérations dans un même DAG, combine les transformations étroites dans un seul stage et garde les résultats intermédiaires en mémoire (<code>cache()</code>), ce qui permet de réutiliser le jeu dédoublonné.</li>
+  <li><b>Traitement uniquement par lots, à forte latence, et un outil par usage.</b> MapReduce ne traite que des lots et ne sait pas consommer un flux Kafka en continu. Le SQL, le streaming et les graphes demandent des outils séparés (Hive, Storm, Giraph). SahlPay a besoin d'indicateurs <i>presque en temps réel</i>. Spark offre un moteur unique : SparkCore, Spark SQL, Structured Streaming et GraphX/GraphFrames, utilisés dans ce projet sur le même cluster et avec le même code.</li>
+</ul>
+</section>
+
+<!-- ============================== PARTIE 2 ============================== -->
+<section>
+<h2>2. Traitement batch avec SparkCore (RDD)</h2>
+<p>L'historique a été généré avec <code>producer.py --mode file --n 50000</code>, soit 50 000 événements sur 2 jours simulés. Il a ensuite été copié dans <code>lake/bronze/history/</code>. Les Workers n'ont pas accès au disque du conteneur Jupyter : la lecture passe donc par <code>sc.textFile("s3a://lake/…")</code>, puis chaque ligne est analysée avec <code>json.loads</code>.</p>
+
+<h3>2.1 Chaîne de traitement</h3>
+<pre>completed = (sc.textFile(PATH).map(json.loads)
+               .filter(lambda e: e["status"] == "COMPLETED")
+               .map(lambda e: (e["tx_id"], e)).reduceByKey(lambda a, b: a)   # retire ~2 % de doublons
+               .values().cache())
+sum_count = completed.map(lambda e: (e["city"], e["amount_mad"])).aggregateByKey(
+               (0.0, 0), lambda acc, v: (acc[0] + v, acc[1] + 1),             # dans une partition
+                         lambda a, b: (a[0] + b[0], a[1] + b[1]))             # entre partitions
+avg_city = sum_count.mapValues(lambda s: (s[0], s[1], s[0] / s[1]))</pre>
+<p>Le générateur réémet environ 2 % des événements à l'identique (même <code>tx_id</code> et même <code>status</code>). Nous les retirons avant d'agréger, sinon les montants seraient surestimés. Pour la moyenne, la somme et le nombre sont calculés <b>en un seul passage</b> grâce à <code>aggregateByKey</code> et à un accumulateur <code>(somme, nombre)</code>.</p>
+
+<div class="row">
+<div>
+<table>
+<tr><th>Ville</th><th class="num">Montant total (MAD)</th><th class="num">Nb</th><th class="num">Moyenne</th></tr>
+<tr><td>Casablanca</td><td class="num">1 771 958,41</td><td class="num">4 044</td><td class="num">438,17</td></tr>
+<tr><td>Rabat</td><td class="num">905 406,01</td><td class="num">2 123</td><td class="num">426,47</td></tr>
+<tr><td>Marrakech</td><td class="num">812 544,50</td><td class="num">1 421</td><td class="num">571,81</td></tr>
+<tr><td>Tanger</td><td class="num">661 911,48</td><td class="num">1 866</td><td class="num">354,72</td></tr>
+<tr><td>Fès</td><td class="num">496 963,56</td><td class="num">1 365</td><td class="num">364,08</td></tr>
+<tr><td>Oujda</td><td class="num">326 583,26</td><td class="num">419</td><td class="num">779,43</td></tr>
+<tr><td>Tétouan</td><td class="num">315 692,32</td><td class="num">399</td><td class="num">791,21</td></tr>
+<tr><td>Meknès</td><td class="num">307 520,92</td><td class="num">665</td><td class="num">462,44</td></tr>
+<tr><td>Agadir</td><td class="num">293 650,67</td><td class="num">919</td><td class="num">319,53</td></tr>
+<tr><td>Kénitra</td><td class="num">274 320,34</td><td class="num">807</td><td class="num">339,93</td></tr>
+</table>
+<p class="small" style="margin-top:-3px">Tableau 1. Paiements et transferts <code>COMPLETED</code> dédoublonnés, par ville.</p>
+</div>
+<div style="flex:.8">
+<table>
+<tr><th>#</th><th>Commerçant</th><th class="num">Paiements validés</th></tr>
+<tr><td>1</td><td>M-001 (Épicerie, Tanger)</td><td class="num">637</td></tr>
+<tr><td>2</td><td>M-002 (Station, Casablanca)</td><td class="num">372</td></tr>
+<tr><td>3</td><td>M-003 (Boutique, Casablanca)</td><td class="num">302</td></tr>
+<tr><td>4</td><td>M-004 (Épicerie, Casablanca)</td><td class="num">230</td></tr>
+<tr><td>5</td><td>M-005 (Boutique, Fès)</td><td class="num">175</td></tr>
+</table>
+<p class="small" style="margin-top:-3px">Tableau 2. Top 5 des commerçants (P2M <code>COMPLETED</code>), obtenu avec <code>takeOrdered(5, key=-nb)</code>. La concentration sur les premiers identifiants reflète la loi de popularité de type Zipf du générateur.</p>
+<p class="small">Casablanca concentre près de 29 % des transactions validées. Oujda et Tétouan ont les tickets moyens les plus élevés (environ 780 MAD), ce qui est cohérent avec la quasi-absence de petits paiements d'épicerie dans ces villes (voir partie 3).</p>
+</div>
+</div>
+
+<h3>2.2 Lineage, transformations et actions</h3>
+<div class="row">
+<pre style="flex:1.3">(2) PythonRDD[36] at collect
+ |  MapPartitionsRDD[35] at mapPartitions
+ |  ShuffledRDD[34] at partitionBy
+ +-(2) PairwiseRDD[33] at aggregateByKey
+    |  PythonRDD[32] at aggregateByKey
+    |  PythonRDD[27] at RDD
+    |      CachedPartitions: 2; MemorySize: 685.5 KiB
+    |  MapPartitionsRDD[26] at mapPartitions
+    |  ShuffledRDD[25] at partitionBy
+    +-(2) PairwiseRDD[24] at reduceByKey
+       |  PythonRDD[23] at reduceByKey
+       |  s3a://lake/bronze/history/… MapPartitionsRDD[22] at textFile
+       |  s3a://lake/bronze/history/… HadoopRDD[21] at textFile</pre>
+<div>
+<table>
+<tr><th>Transformations (lazy)</th><th>Actions</th></tr>
+<tr><td><code>textFile</code>, <code>map</code>, <code>filter</code>, <code>reduceByKey</code>, <code>values</code>, <code>aggregateByKey</code>, <code>mapValues</code>, <code>cache</code> (marquage seulement)</td>
+    <td><code>collect</code>, <code>takeOrdered</code>, <code>count</code>, <code>take</code></td></tr>
+</table>
+<p class="small">Une transformation ne fait qu'ajouter un nœud au graphe : rien n'est lu tant qu'aucune action n'est appelée. Chaque indentation <code>+-</code> de <code>toDebugString()</code> marque une <b>dépendance large</b> (shuffle), donc une frontière de stage. La ligne <code>CachedPartitions</code> montre que le RDD dédoublonné est conservé en mémoire (685,5 Kio, 2 partitions).</p>
+</div>
+</div>
+
+<h3>2.3 DAG, stages et shuffle</h3>
+<div class="row">
+<figure><img src="../captures/partie2/dag_job2_collect.jpg"><figcaption>Figure 4. DAG du job <code>collect</code> : 3 stages.</figcaption></figure>
+<figure><img src="../captures/partie2/dag_job3_takeOrdered_skipped.jpg"><figcaption>Figure 5. Top 5 : le stage de lecture est <i>skipped</i>.</figcaption></figure>
+<figure><img src="../captures/partie2/stages.jpg"><figcaption>Figure 6. Onglet Stages : entrées et volumes de shuffle.</figcaption></figure>
+</div>
+<ul>
+  <li><b>3 stages</b> par job, découpés aux deux shuffles. Le <b>stage 6</b> regroupe la lecture, <code>json.loads</code>, le filtre et la création des paires, puis écrit le shuffle du dédoublonnage. Le <b>stage 7</b> fait le <code>reduceByKey</code> par <code>tx_id</code> puis le côté map de <code>aggregateByKey</code>. Le <b>stage 8</b> fusionne les accumulateurs par ville et renvoie le résultat au driver.</li>
+  <li><b>Le shuffle de <code>reduceByKey</code>.</b> Chaque tâche pré-agrège localement ses paires (<i>combiner</i> côté map) et les écrit sur disque, réparties par hachage de la clé. Les tâches du stage suivant récupèrent ensuite par le réseau toutes les paires d'une même clé. Les volumes mesurés montrent l'effet de la pré-agrégation : 11,2 Mio lus, 700 Kio écrits pour le dédoublonnage (clé <code>tx_id</code>, presque unique, donc peu de réduction), mais <b>735 octets</b> seulement pour l'agrégation par ville (10 clés).</li>
+  <li><b>Stages <i>skipped</i></b> : le job du top 5 réutilise les fichiers de shuffle et le cache déjà produits, sans relire MinIO.</li>
+</ul>
+<p><b>Tolérance aux pannes.</b> Un RDD ne stocke pas de réplique de ses données : il mémorise sa <i>recette</i>, c'est-à-dire son lineage. Si un executor disparaît, Spark identifie les partitions perdues, qu'elles soient en cache ou en sortie de shuffle. Il relance uniquement les tâches nécessaires, en rejouant les transformations depuis la dernière donnée disponible : les fichiers de shuffle encore présents, ou à défaut le fichier source dans MinIO, qui est immuable. Comme les transformations sont déterministes, le résultat recalculé est identique.</p>
+</section>
+
+<!-- ============================== PARTIE 3 ============================== -->
+<section>
+<h2>3. Spark SQL et DataFrames</h2>
+
+<h3>3.1 Lecture typée, recalcul et jointure</h3>
+<p>Les deux sources sont lues avec un <b>schéma explicite</b> (<code>StructType</code> : <code>amount_mad</code> en <code>DoubleType</code>, <code>event_time</code> en <code>TimestampType</code>), sans inférence. On évite ainsi une passe de lecture supplémentaire et des types devinés. Remarque : <code>printSchema()</code> affiche <code>nullable = true</code> même pour <code>tx_id</code>, déclaré non nul, car Spark force la nullabilité des sources fichiers. Le calcul par ville a été refait avec l'API DataFrame (<code>groupBy().agg()</code>) puis en SQL (<code>createOrReplaceTempView</code> + <code>spark.sql</code>). Un contrôle automatique confirme des <b>résultats strictement identiques</b> au tableau 1.</p>
+<div class="row">
+<div>
+<p>La jointure des paiements P2M avec les 300 commerçants donne le montant encaissé par catégorie et par ville : 75 combinaisons, détaillées dans le notebook. Au niveau national, le <b>carburant</b> domine en valeur, mais l'<b>épicerie</b> domine en nombre de paiements, avec des tickets beaucoup plus petits.</p>
+</div>
+<table style="flex:.9">
+<tr><th>Catégorie</th><th class="num">Montant (MAD)</th><th class="num">Nb</th></tr>
+<tr><td>carburant</td><td class="num">753 053</td><td class="num">1 821</td></tr>
+<tr><td>vêtements</td><td class="num">507 312</td><td class="num">1 262</td></tr>
+<tr><td>e-commerce</td><td class="num">473 578</td><td class="num">891</td></tr>
+<tr><td>épicerie</td><td class="num">357 186</td><td class="num">2 021</td></tr>
+<tr><td>pharmacie</td><td class="num">306 636</td><td class="num">1 101</td></tr>
+</table>
+</div>
+
+<h3>3.2 UDF Python contre <code>when/otherwise</code></h3>
+<p>La fonction <code>amount_band</code> classe chaque montant en <i>micro</i> (&lt; 50), <i>standard</i> (50 à 2 000) ou <i>élevé</i> (&gt; 2 000) : 7 275, 40 895 et 1 830 événements. Elle a été écrite une fois en UDF Python et une fois avec <code>F.when(...).otherwise(...)</code>. Le temps est mesuré par une écriture <code>noop</code> qui force le calcul complet, en gardant le meilleur de 3 essais : <b>0,42 s pour l'UDF contre 0,19 s en natif</b>, soit 2,2 fois plus rapide. Le plan physique explique cet écart :</p>
+<pre>UDF  : Project [tx_id, pythonUDF0 AS amount_band] +- BatchEvalPython [amount_band(amount_mad)] +- InMemoryTableScan …
+Natif: Project [tx_id, CASE WHEN (amount_mad &lt; 50.0) THEN micro WHEN (amount_mad &lt;= 2000.0) THEN standard ELSE eleve END …]</pre>
+<p>L'UDF est une <b>boîte noire</b> pour Catalyst, qui ne peut ni la simplifier ni la déplacer. Surtout, l'opérateur <code>BatchEvalPython</code> sérialise chaque ligne de la JVM vers un processus Python, puis fait le trajet inverse. L'expression <code>CASE WHEN</code> reste dans la JVM : elle est compilée en bytecode par le <i>whole-stage codegen</i> de Tungsten et travaille directement sur le format binaire des lignes.</p>
+
+<h3>3.3 Couche Silver</h3>
+<p>Les données sont dédoublonnées sur <code>(tx_id, status)</code>, enrichies de <code>amount_band</code> et de <code>date</code>, puis écrites en Parquet (Snappy) dans <code>lake/silver/transactions_history/</code>, <b>partitionnées par <code>city</code></b>. On passe de 50 000 lignes Bronze à <b>49 066 lignes Silver</b> (934 doublons retirés), réparties en 10 dossiers <code>city=…/</code>. Un filtre sur la ville ne lira donc qu'un seul dossier (<i>partition pruning</i>).</p>
+<pre>$ mc ls --recursive local/lake/silver/
+transactions_history/_SUCCESS
+transactions_history/city=Agadir/part-00000-….snappy.parquet       37KiB
+transactions_history/city=Casablanca/part-00001-….snappy.parquet  205KiB   … (20 fichiers, 10 villes)</pre>
+
+<h3>3.4 <code>explain(True)</code> de la jointure</h3>
+<pre>== Parsed Logical Plan ==        (la requête telle qu'écrite, colonnes non résolues)
+Join Inner, (payee_id = merchant_id)
+:- Filter (type = P2M)  +- Deduplicate [tx_id, status]  +- Filter (status = COMPLETED)  +- Relation json
++- Project [merchant_id, name, city AS m_city, …]  +- Relation json
+== Analyzed Logical Plan ==      (noms et types résolus grâce au schéma : amount_mad: double, event_time: timestamp …)
+== Optimized Logical Plan ==     (après les règles de Catalyst)
+Join Inner, (payee_id = merchant_id)
+:- Filter ((isnotnull(type) AND (type = P2M)) AND isnotnull(payee_id))
+:  +- InMemoryRelation … +- FileScan json … PushedFilters: [IsNotNull(status), EqualTo(status,COMPLETED)]
++- Project [...] +- Filter isnotnull(merchant_id) +- Relation json
+== Physical Plan ==
+AdaptiveSparkPlan
++- BroadcastHashJoin [payee_id], [merchant_id], Inner, BuildRight</pre>
+<ul>
+  <li><b>Plan logique</b> (<i>parsed</i>, puis <i>analyzed</i>) : il reprend fidèlement notre code, à savoir le filtre <code>COMPLETED</code>, le dédoublonnage, le filtre <code>P2M</code> et la jointure avec le référentiel renommé.</li>
+  <li><b>Plan optimisé par Catalyst</b> :
+    <ul>
+      <li>ajout de prédicats <code>isnotnull</code> sur les clés de jointure, car une clé nulle ne peut jamais joindre ;</li>
+      <li><b>predicate pushdown</b> : <code>status = COMPLETED</code> descend jusqu'au <code>FileScan</code> (<code>PushedFilters</code>) ;</li>
+      <li>remplacement de la branche transactions par l'<code>InMemoryRelation</code>, car le DataFrame <code>completed</code> est en cache ;</li>
+      <li>le <i>column pruning</i> est visible sur l'agrégation par ville, où le scan ne lit que 4 colonnes (<code>ReadSchema: struct&lt;tx_id,city,status,amount_mad&gt;</code>). Ici, la jointure renvoie toutes les colonnes.</li>
+    </ul>
+  </li>
+  <li><b>Stratégie physique</b> : <b>BroadcastHashJoin</b> (<i>BuildRight</i>). Le référentiel (300 lignes, environ 43 Kio) est bien sous le seuil <code>spark.sql.autoBroadcastJoinThreshold</code> de 10 Mo. Il est diffusé une fois à chaque executor, ce qui évite de redistribuer les transactions. En forçant <code>autoBroadcastJoinThreshold = -1</code>, on obtient un <b>SortMergeJoin</b>, qui ajoute deux <code>Exchange hashpartitioning(…, 8)</code> et deux <code>Sort</code>. À cette échelle, les temps restent proches (1,31 s contre 1,33 s), mais le BroadcastHashJoin évite le shuffle de la grande table, ce qui deviendra décisif quand le volume augmentera.</li>
+</ul>
+<div class="row" style="width:82%;margin:0 auto">
+<figure><img src="../captures/partie3/dag_job13_jointure_broadcast.jpg"><figcaption>Figure 7. Jointure et agrégation par catégorie et ville. Avec AQE, la diffusion du référentiel est un job séparé.</figcaption></figure>
+<figure><img src="../captures/partie3/dag_job40_sortmergejoin.jpg"><figcaption>Figure 8. Variante SortMergeJoin : 5 stages, dont 2 échanges de plus.</figcaption></figure>
+</div>
+
+<h3>3.5 RDD, DataFrame et Dataset : comparaison mesurée</h3>
+<p>Une première mesure (RDD 5,49 s, DataFrame 9,07 s) comparait une exécution à froid et une exécution à chaud, ce qui la rendait inexploitable. Nous avons donc mesuré <b>le même calcul</b> dans les mêmes conditions : lecture, filtre <code>COMPLETED</code>, dédoublonnage <code>tx_id</code>, somme et nombre par ville, <code>collect</code>. Chaque variante est lancée sans cache, avec une exécution d'échauffement écartée, puis on retient la médiane de plusieurs exécutions. Les quatre variantes renvoient le même résultat. Le test a été fait sur le jeu réel, puis sur un jeu 20 fois plus grand (1 million d'événements, avec des <code>tx_id</code> distincts).</p>
+<figure><img src="../captures/partie3/benchmark_rdd_df_sql.png" style="width:82%"><figcaption>Figure 9. Temps médian du même calcul selon l'API et le volume (cluster : 2 Workers × 2 cœurs).</figcaption></figure>
+<table>
+<tr><th></th><th>RDD</th><th>DataFrame</th><th>Dataset</th></tr>
+<tr><td>Typage</td><td>Objets Python/JVM opaques, pas de schéma</td><td>Lignes avec schéma, vérifié à l'exécution</td><td>Objets typés, vérifiés <b>à la compilation</b> (Scala/Java)</td></tr>
+<tr><td>Optimisation</td><td>Aucune : le code est exécuté tel qu'écrit</td><td>Catalyst (pushdown, pruning, choix de jointure, AQE) et Tungsten (codegen, format binaire)</td><td>Catalyst et Tungsten, via des encodeurs</td></tr>
+<tr><td>En PySpark</td><td>Lambdas exécutées dans des workers Python (sérialisation)</td><td>Exécution entièrement dans la JVM, même plan en SQL</td><td>Non disponible</td></tr>
+<tr><td>Mesure à 1 M d'événements</td><td class="num">4,23 s</td><td class="num">2,00 s (SQL : 1,71 s ; Parquet : 1,68 s)</td><td>n/a</td></tr>
+</table>
+<p><b>Interprétation.</b> À 50 000 événements (11 Mo), les quatre variantes prennent environ 1 s : le coût fixe domine (planification, lancement des tâches, accès S3). À 1 million d'événements, le RDD devient <b>2,1 à 2,5 fois plus lent</b>. Il doit faire passer chaque ligne par Python (<code>json.loads</code> et lambdas), et il analyse et transporte tous les champs. Le DataFrame, lui, ne décode que les 4 colonnes utiles, filtre dès la lecture et exécute le reste en code généré dans la JVM. DataFrame et SQL produisent le même plan physique, et leurs écarts relèvent du bruit de mesure. Le Parquet colonnaire, pénalisé à petite échelle par l'ouverture de nombreux petits fichiers, devient le plus rapide avec le volume. Le Dataset apporterait en plus la sûreté du typage à la compilation, mais il n'existe qu'en Scala et Java. Pour un projet PySpark, le DataFrame est donc le bon choix. Le RDD reste utile pour les traitements non structurés ou très spécifiques, et c'est l'API sur laquelle s'appuie GraphX, utilisé dans la partie 6.</p>
+</section>
+
+</body>
+</html>
